@@ -11,13 +11,14 @@ public class SetReview {
         set.add(new Student(1, "Annie"));
         set.add(new Student(2, "Bob"));
         set.add(new Student(3, "Claire"));
-        set.add(new Student(4, "Diana"));
+        set.add(new Student(4, "Diana")); // ALWAYS IMPLEMENT HASHCODE IN HASH DATA STRUCTURES
+        set.add(new Student(4, "Diana"));// will add duplicate if hashcode is not implemented in Student class
      //   System.out.println(set.add(new Student(1, "Annie")));//false
 
         System.out.println(set);
         System.out.println("                       First Repeating Char");
-        String str="Java Developer";
-        System.out.println(firstRepeatingChar(str));
+    //    String str="Java Developer";
+      //  System.out.println(firstRepeatingChar(str));
 
         // 2 add element
 
