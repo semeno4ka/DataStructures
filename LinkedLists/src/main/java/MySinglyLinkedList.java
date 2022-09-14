@@ -72,8 +72,15 @@ int indexOf(int id){
         current=current.next;
     }
 return -1;
+}
 
-
+void addFirst(int data){
+        Node node=new Node(data);
+        if(isEmpty()){
+            head=tail=node;
+        }
+        Node prev=node;
+        Node current=node;
 }
 
 
