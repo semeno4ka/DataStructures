@@ -8,5 +8,14 @@ public class SinglyLinkedLIstApp {
             myList.add(i);
         }
         myList.printNodes();
+        myList.deletebyId(7);
+        myList.printNodes();
+        myList.deletebyId(0);
+        myList.printNodes();
+        myList.deletebyId(9);
+        myList.printNodes();
+
+        System.out.println(myList.indexOf(6));// index of element 6 is equal to 5
+
     }
 }
