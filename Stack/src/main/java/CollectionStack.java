@@ -1,5 +1,6 @@
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Stack;
 
 public class CollectionStack {
     public static void main(String[] args) {
@@ -12,6 +13,7 @@ public class CollectionStack {
         System.out.println(cStack.pop());// shows and removes
         System.out.println(cStack.peek());// shows new top
 
+        Stack<Integer> s=new Stack<>();// Is still doable, but Deque implementation is preferred.
 
 
     }
