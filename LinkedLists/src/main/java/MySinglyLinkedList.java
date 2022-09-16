@@ -78,11 +78,83 @@ void addFirst(int data){
         Node node=new Node(data);
         if(isEmpty()){
             head=tail=node;
+        }else{
+            node.next=head;
+            head=node;
         }
-        Node prev=node;
-        Node current=node;
+        // increase size
+    size++;
 }
 
+public int getKthFromLast(int k){ //can start iteration from 1, then use just K not k-1
+        Node p1=head;// create two pointers
+        Node p2=head;
+    for (int i = 0; i <k-1 ; i++) {
+        p2=p2.next; // move pointer2 K-1 number of times
+    }
+    while(p2.next!=null){ // move both till p2 hits null
+        p1=p1.next;
+        p2=p2.next;
+    }
+    //return location of pointer1 which is at Kth from end
+    return p1.id;
+
+}
+
+public void removeKthFromLast(int k){// need additional pointer to keep information of previous
+        //create three pointers
+    Node p1=head;
+    Node p2=head;
+    Node prev=head;// could be null
+    for (int i = 0; i <k-1 ; i++) {
+        p2=p2.next; // move pointer2 K-1 number of times
+    }
+    while(p2.next!=null){
+        prev=p1;
+        p1=p1.next;
+        p2=p2.next;
+    }
+    //there are three possibilities: delete from first, last and middle
+    if(p1==head){
+        head=p1.next;
+        p1.next=null;
+        size--;
+    }else if(p1==tail){
+        tail=prev;
+        prev.next=null;
+        size--;
+    }else{
+        prev.next=p1.next;
+        p1.next=null;
+        size--;
+    }
+}
+    public void removeKthFromLast2(int k){
+        Node ptr1=head;
+        Node ptr2=head;
+
+        for(int i=0;i<k-1;i++) {
+
+            ptr2=ptr2.next;
+
+            if (ptr2==null)  System.out.println("Less than k elements");
+
+            else if(ptr2.next==null){
+                head=ptr1.next;
+                ptr1.next=null;
+                return;
+            }
+        }
+        while(ptr2.next.next!=null) {
+
+            ptr1=ptr1.next;
+            ptr2=ptr2.next;
+
+        }
+        ptr1.next=ptr1.next.next;
+        ptr1=ptr1.next;
+        ptr1=null;
+    }
 
 }
 

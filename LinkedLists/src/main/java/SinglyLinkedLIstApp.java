@@ -17,5 +17,10 @@ public class SinglyLinkedLIstApp {
 
         System.out.println(myList.indexOf(6));// index of element 6 is equal to 5
 
+        System.out.println("--------------------------------------");
+        myList.printNodes();
+        System.out.println(myList.getKthFromLast(3));
+        myList.removeKthFromLast(3);
+        myList.printNodes();
     }
 }
