@@ -1,7 +1,7 @@
-package MiddleNode;
+package ReversedLinkedList;
 
 public class MySinglyLinkedList {
-    public Node head;
+    Node head;
     Node tail;
     int size;
 
@@ -9,7 +9,7 @@ public class MySinglyLinkedList {
         return head == null;
     }
 
-    public void add(int data) {
+    void add(int data) {
         // create a new object frin data
         Node node = new Node(data);
         if (isEmpty()) {// if the list is empty
@@ -21,7 +21,7 @@ public class MySinglyLinkedList {
         }
     }
 
-    public void printNodes() {
+    void printNodes() {
         Node current = head;
         while (current != null) {
             if (current.next == null) {
